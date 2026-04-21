@@ -4,6 +4,12 @@ import VisualEditsMessenger from "../visual-edits/VisualEditsMessenger";
 import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
 
+// ✅ ADD THIS
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "Poonam Palace - Luxury Banquet Hall in Pulgaon | Wedding & Event Venue",
   description: "Experience royal celebrations at Poonam Palace, Pulgaon's premier luxury banquet hall. Perfect for weddings, receptions, corporate events, and celebrations. Seating capacity 500+ guests. Book now!",
@@ -21,14 +27,14 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  viewport: "width=device-width, initial-scale=1",
+  // ❌ REMOVE viewport from here
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body className="antialiased">
