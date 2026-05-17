@@ -17,10 +17,6 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
 
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-
   turbopack: {
     rules: {
       "*.{jsx,tsx}": {
