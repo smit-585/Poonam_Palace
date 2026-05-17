@@ -5,6 +5,7 @@ import GallerySection from "@/components/GallerySection";
 import PackagesSection from "@/components/PackagesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import TermsAndConditions from "@/components/TermsAndConditions";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -18,6 +19,7 @@ export default function Home() {
       <PackagesSection />
       <TestimonialsSection />
       <WhyChooseUs />
+      <TermsAndConditions />
       <ContactSection />
       <Footer />
     </main>

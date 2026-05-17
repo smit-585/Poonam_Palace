@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle2, Shield, Clock, HeartHandshake, Sparkles, Trophy, Users, Star } from "lucide-react";
+import { CheckCircle2, Shield, Clock, HeartHandshake, Sparkles, Building, Users, Star } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const reasons = [
@@ -30,9 +30,9 @@ const reasons = [
     description: "High-quality décor, furnishings, and world-class amenities",
   },
   {
-    icon: Trophy,
-    title: "Award-Winning Venue",
-    description: "Recognized as the most preferred banquet hall in the region",
+    icon: Building,
+    title: "Preferred Event Venue",
+    description: "Trusted by families in the region for weddings, receptions, and special celebrations.",
   },
   {
     icon: Users,

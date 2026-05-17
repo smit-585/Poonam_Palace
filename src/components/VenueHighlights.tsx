@@ -24,14 +24,14 @@ const highlights = [
   },
   {
     icon: UtensilsCrossed,
-    title: "Gourmet Catering",
-    description: "Multi-cuisine dining with experienced chefs and premium quality food",
+    title: "Dining Hall",
+    description: "Dedicated dining space for comfortable guest meal arrangements.",
     color: "text-[#D4AF37]",
   },
   {
     icon: Car,
     title: "Ample Parking",
-    description: "Spacious parking facility for 100+ vehicles with valet service",
+    description: "Spacious parking facility with 50+ cars",
     color: "text-[#D4AF37]",
   },
   {
@@ -43,7 +43,7 @@ const highlights = [
   {
     icon: Music,
     title: "Grand Stage Setup",
-    description: "Professional stage with lighting, sound system, and backdrop",
+    description: "Professional stage with lighting and sound system",
     color: "text-[#D4AF37]",
   },
   {
@@ -100,9 +100,8 @@ export default function VenueHighlights() {
             return (
               <div
                 key={index}
-                className={`royal-card p-6 text-center transition-all duration-700 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
+                className={`royal-card p-6 text-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                  }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <div className="bg-gradient-to-br from-[#FFF8F0] to-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 border-2 border-[#D4AF37]/20">
@@ -126,8 +125,8 @@ export default function VenueHighlights() {
               Everything You Need Under One Roof
             </h3>
             <p className="text-lg text-gray-700 leading-relaxed">
-              From state-of-the-art amenities to personalized services, Poonam Palace offers 
-              a complete package for your special day. Our experienced team ensures seamless 
+              From state-of-the-art amenities to personalized services, Poonam Palace offers
+              a complete package for your special day. Our experienced team ensures seamless
               execution of every event, leaving you free to create beautiful memories with your loved ones.
             </p>
           </div>

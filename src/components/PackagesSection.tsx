@@ -3,6 +3,7 @@
 import { Check, Crown, Sparkles, Star } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const packages = [
   {
@@ -29,7 +30,6 @@ const packages = [
     features: [
       "Evening venue booking (6 hours)",
       "Open lawn space",
-      "Seating for up to 350 guests",
       "Parking facility",
       "Basic lighting setup",
       "Photography support area",
@@ -40,11 +40,10 @@ const packages = [
   {
     name: "Water Park Package",
     icon: Star,
-    price: "₹50,000",
+    price: "₹51,000",
     tagline: "Make Memories Special",
     features: [
       "Half day booking (4-5 hours)",
-      "Balloon & party décor",
       "Music system",
       "Parking available",
       "Staff assistance",
@@ -52,33 +51,6 @@ const packages = [
     ],
     popular: false,
     color: "from-[#D4AF37] to-[#F4E4C1]",
-  },
-  {
-    name: "Rental Charges",
-    icon: Crown,
-    price: "",
-    tagline: "",
-    features: [
-      "H:Rental Charges:",
-      "Ducting (5 Hours) – ₹3000/-",
-      "Generator (5 Hours) – ₹3000/-",
-      "Stage & AC Extra – ₹1500/-",
-      "Sound (5 Hours) – ₹1000/-",
-      "Electricity per Unit – ₹20/-",
-      "Lift (8 Hours) – ₹3000/-",
-      "H:Items / Materials:",
-      "Steel Sofa – ₹150/- per piece",
-      "Mattress, Pillow, Bedsheet – ₹20/- per piece",
-      "Blanket – ₹20/- per piece",
-      "Chair – ₹6/- per piece",
-      "Chair Cover – ₹7/- per piece",
-      "Cushion Chair – ₹15/- per piece",
-      "Foam Mattress – ₹40/- per piece",
-      "Foam Sofa – ₹300/- per piece",
-      "Carpet – ₹2500/-"
-    ],
-    popular: false,
-    color: "from-[#800020] to-[#D4AF37]",
   },
 ];
 
@@ -130,7 +102,7 @@ export default function PackagesSection() {
         </div>
 
         {/* Packages Grid */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {packages.map((pkg, index) => {
             const Icon = pkg.icon;
             return (
@@ -210,8 +182,126 @@ export default function PackagesSection() {
           })}
         </div>
 
+        {/* Accommodation Card */}
+        <div className={`mt-20 max-w-5xl mx-auto transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <div className="bg-[#FFF8EC] rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-[#C9A227]/30 flex flex-col md:flex-row hover:shadow-[0_15px_40px_rgba(122,15,36,0.15)] transition-shadow duration-300 p-6 md:p-8 gap-8 items-center">
+
+            {/* Content */}
+            <div className="w-full md:w-1/2 flex flex-col justify-center order-1 md:order-1">
+              <h3 className="text-2xl md:text-3xl font-bold text-[#7A0F24] mb-3">Additional Accommodation</h3>
+              <p className="text-gray-600 mb-6 font-medium">Comfortable AC rooms available for family members and guests during events.</p>
+              <div className="space-y-5">
+                <div className="flex items-center gap-4 group">
+                  <div className="w-12 h-12 rounded-full bg-[#C9A227]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#C9A227]/20 transition-colors">
+                    <Check className="w-6 h-6 text-[#C9A227]" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-1">Total AC Rooms Available</p>
+                    <p className="text-[#7A0F24] font-bold text-xl">35 Rooms</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 group">
+                  <div className="w-12 h-12 rounded-full bg-[#C9A227]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#C9A227]/20 transition-colors">
+                    <Check className="w-6 h-6 text-[#C9A227]" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-1">Charges</p>
+                    <p className="text-[#C9A227] font-bold text-2xl">₹1,500/- <span className="text-sm text-gray-500 font-medium normal-case">per room</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Image */}
+            <div className="w-full md:w-1/2 order-2 md:order-2">
+              <div className="relative aspect-[4/5] max-h-[420px] w-full overflow-hidden rounded-2xl border border-[#C9A227]/30 shadow-lg bg-[#FFF8EC]">
+                <Image
+                  src="/acrooms.jpeg"
+                  alt="AC Rooms"
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Additional Rental Charges */}
+        <div className={`mt-24 transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#800020] mb-3">
+              Additional Rental Charges
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-medium">
+              Optional services and materials available on request
+            </p>
+            <div className="mt-4 h-1 w-24 mx-auto gold-gradient rounded-full" />
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 md:gap-10 max-w-5xl mx-auto">
+            {/* Service Charges Card */}
+            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-[#D4AF37]/30 flex flex-col h-full hover:shadow-[0_15px_40px_rgba(128,0,32,0.1)] transition-shadow duration-300">
+              <div className="flex items-center gap-4 mb-6 pb-4 border-b border-[#D4AF37]/20">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#800020] to-[#B8941F] flex items-center justify-center shadow-md">
+                  <Crown className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#800020]">Service Charges</h3>
+              </div>
+              <div className="space-y-5 flex-1">
+                {[
+                  { name: "Ducting (5 Hours)", price: "₹3,000/-" },
+                  { name: "Generator (5 Hours)", price: "₹3,000/-" },
+                  { name: "Stage & AC Extra", price: "₹1,500/-" },
+                  { name: "Sound (5 Hours)", price: "₹1,000/-" },
+                  { name: "Electricity per Unit", price: "₹20/-" },
+                  { name: "Lift (8 Hours)", price: "₹3,000/-" },
+                ].map((item, i) => (
+                  <div key={i} className="flex justify-between items-baseline group">
+                    <span className="text-gray-700 font-medium text-[15px]">{item.name}</span>
+                    <div className="flex-grow border-b border-dashed border-gray-300 mx-3 relative -top-1 opacity-50 group-hover:border-[#D4AF37] transition-colors"></div>
+                    <span className="text-[#800020] font-bold text-[15px] whitespace-nowrap">{item.price}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Items / Materials Card */}
+            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-[#D4AF37]/30 flex flex-col h-full hover:shadow-[0_15px_40px_rgba(212,175,55,0.15)] transition-shadow duration-300">
+              <div className="flex items-center gap-4 mb-6 pb-4 border-b border-[#D4AF37]/20">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#B8941F] flex items-center justify-center shadow-md">
+                  <Sparkles className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#800020]">Items / Materials</h3>
+              </div>
+              <div className="space-y-5 flex-1">
+                {[
+                  { name: "Steel Sofa", price: "₹150/- per piece" },
+                  { name: "Mattress, Pillow, Bedsheet", price: "₹20/- per piece" },
+                  { name: "Blanket", price: "₹20/- per piece" },
+                  { name: "Chair", price: "₹6/- per piece" },
+                  { name: "Chair Cover", price: "₹7/- per piece" },
+                  { name: "Cushion Chair", price: "₹15/- per piece" },
+                  { name: "Foam Mattress", price: "₹40/- per piece" },
+                  { name: "Foam Sofa", price: "₹300/- per piece" },
+                  { name: "Carpet", price: "₹2,500/-" },
+                ].map((item, i) => (
+                  <div key={i} className="flex justify-between items-baseline group">
+                    <span className="text-gray-700 font-medium text-[15px]">{item.name}</span>
+                    <div className="flex-grow border-b border-dashed border-gray-300 mx-3 relative -top-1 opacity-50 group-hover:border-[#D4AF37] transition-colors"></div>
+                    <span className="text-[#800020] font-bold text-[15px] whitespace-nowrap">{item.price}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <p className="text-center text-gray-500 text-sm mt-8 italic">
+            * Final charges may vary based on event requirements and availability.
+          </p>
+        </div>
+
         {/* Additional Info */}
-        <div className={`mt-16 text-center transition-all duration-1000 delay-700 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}>
+        <div className={`mt-20 text-center transition-all duration-1000 delay-700 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}>
           <div className="royal-card p-8 max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-[#800020] mb-4">
               Customizable Packages Available

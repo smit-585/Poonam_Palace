@@ -21,35 +21,36 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/PoonamPalacehall.jpeg"
+          src="/main.jpeg"
           alt="Poonam Palace Grand Entrance"
           fill
           className="object-cover"
           priority
         />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+        {/* Overlay with subtle vignette and maroon tint */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-[#7A0F24]/30 to-black/80" />
+        <div className="absolute inset-0 shadow-[inset_0_0_150px_rgba(0,0,0,0.9)]" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
         <div className={`max-w-5xl transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
           {/* Logo/Brand */}
-          <div className="mb-6">
-            <h1 className="text-6xl font-bold text-white mb-2 md:text-8xl lg:text-9xl tracking-wide">
+          <div className="mb-4">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[#FFFBF4] mb-3 tracking-wider drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
               Poonam Palace
             </h1>
-            <div className="h-1 w-32 mx-auto gold-gradient rounded-full" />
+            <div className="h-[2px] w-[150px] md:w-[260px] mx-auto bg-gradient-to-r from-transparent via-[#E6C766] to-transparent rounded-full shadow-[0_0_10px_rgba(230,199,102,0.5)]" />
           </div>
 
           {/* Tagline */}
-          <p className="text-2xl md:text-4xl lg:text-5xl font-serif text-[#F4E4C1] mb-8 italic font-light">
+          <p className="text-xl md:text-2xl lg:text-3xl font-serif text-[#E6C766] mb-6 italic tracking-wide drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
             Where Celebrations Become Royal
           </p>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-white/90 mb-12 max-w-2xl mx-auto font-light">
-            Experience luxury and grandeur at Pulgaon&apos;s most prestigious banquet hall. 
+          <p className="text-base md:text-lg text-[#FFFBF4]/90 mb-10 max-w-[650px] mx-auto font-light leading-relaxed drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+            Experience luxury and grandeur at Pulgaon&apos;s most prestigious banquet hall.
             Your special moments deserve a royal setting.
           </p>
 
@@ -58,7 +59,7 @@ export default function HeroSection() {
             <Button
               onClick={handleBookNow}
               size="lg"
-              className="gold-gradient text-[#800020] font-semibold text-lg px-8 py-6 hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-[#D4AF37]"
+              className="bg-gradient-to-r from-[#C9A227] to-[#E6C766] text-[#7A0F24] font-bold text-lg px-8 py-6 rounded-2xl shadow-[0_4px_15px_rgba(0,0,0,0.2)] hover:shadow-[0_6px_20px_rgba(230,199,102,0.4)] hover:scale-105 transition-all duration-300 border border-[#E6C766]/50 w-full sm:w-auto"
             >
               <Phone className="mr-2 h-5 w-5" />
               Book Now on WhatsApp
@@ -67,7 +68,7 @@ export default function HeroSection() {
               onClick={() => document.getElementById("packages")?.scrollIntoView({ behavior: "smooth" })}
               size="lg"
               variant="outline"
-              className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white font-semibold text-lg px-8 py-6 hover:bg-white/20 hover:scale-105 transition-all duration-300"
+              className="bg-transparent border-[#C9A227] text-[#FFFBF4] font-semibold text-lg px-8 py-6 rounded-2xl hover:bg-[#FFF8EC] hover:text-[#7A0F24] hover:border-[#FFF8EC] hover:scale-105 transition-all duration-300 w-full sm:w-auto shadow-[0_4px_15px_rgba(0,0,0,0.1)]"
             >
               View Packages
             </Button>
